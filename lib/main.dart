@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:florish/wizard.dart';
+import 'package:florish/dashboard.dart';
 import 'package:florish/my_plants.dart';
 import 'package:florish/learn.dart';
-import 'package:florish/settings.dart';
 
 void main() {
   runApp(const MyApp());
@@ -39,10 +38,9 @@ class _MyContainerState extends State<MyContainer> {
     index = 0;
 
     widgets = [];
-    widgets.add(const Wizard());
+    widgets.add(const Dashboard());
     widgets.add(const MyPlants());
     widgets.add(const Learn());
-    widgets.add(const Settings());
   }
 
   @override
@@ -58,7 +56,7 @@ class _MyContainerState extends State<MyContainer> {
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.compost),
-            label: 'Wizard',
+            label: 'Dashboard',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.grass),
@@ -67,10 +65,6 @@ class _MyContainerState extends State<MyContainer> {
           BottomNavigationBarItem(
             icon: Icon(Icons.book),
             label: 'Learn',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            label: 'Settings',
           ),
         ],
         onTap: (int tappedIndex) {
